@@ -61,7 +61,7 @@
     	"Use spray with key E switch"
 	{
     		"#format"	"{1:t}"
-		"en"		"You succesfully {green}{1}{default} use spray with E key."
+		"en"		"You've succesfully {green}{1}{default} use spray with E key."
 		"cze"		"Úspěšně sis {green}{1}{default} použití spreje klávesou E."
 	}
     	"Play spray sound switch"
