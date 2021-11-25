@@ -6,6 +6,6 @@ With this plugin players can use default sprays in CS:GO
 - Bind on use spray **bind KEY +spray**
 
 
-**Requirements**
+### Requirements
  - [eItems](https://github.com/ESK0/eItems)
  - [PTaH](https://github.com/komashchenko/PTaH)
