@@ -9,3 +9,7 @@ With this plugin players can use default sprays in CS:GO
 ### Requirements
  - [eItems](https://github.com/ESK0/eItems)
  - [PTaH](https://github.com/komashchenko/PTaH)
+
+### Installation
+1. Download files
+2. Upload eSprays.smx, esprays.phrases.txt and all material files to your server
