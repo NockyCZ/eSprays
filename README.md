@@ -12,5 +12,7 @@ With this plugin players can use default sprays in CS:GO
 
 ### Installation
 1. Download files
-2. Upload eSprays.smx, 
-          esprays.phrases.txt and all material files to your server
+2. Upload **eSprays.smx**, **esprays.phrases.txt** and all **material** files to your server
+3. Set `"DownloadSprays": true` in */sourcemod/configs/eItems.json*
+4. Restart server or change map
+5. Configure cvars generated in the new file at *cfg/sourcemod/esprays.cfg*
