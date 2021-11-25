@@ -1,0 +1,7 @@
+LightmappedGeneric
+{
+	"$basetexture"    "decals\eitems\sprays\boston2018\eleague_graffiti"
+	"$translucent"    "1"
+	"$decal"    "1"
+	"$decalscale"    "0.125"
+}

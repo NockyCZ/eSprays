@@ -1,0 +1,7 @@
+LightmappedGeneric
+{
+	"$basetexture"    "decals\eitems\sprays\default2020\p90"
+	"$translucent"    "1"
+	"$decal"    "1"
+	"$decalscale"    "0.125"
+}

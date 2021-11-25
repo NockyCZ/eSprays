@@ -1,0 +1,7 @@
+LightmappedGeneric
+{
+	"$basetexture"    "decals\eitems\sprays\berlin2019\mibr_graffiti"
+	"$translucent"    "1"
+	"$decal"    "1"
+	"$decalscale"    "0.125"
+}

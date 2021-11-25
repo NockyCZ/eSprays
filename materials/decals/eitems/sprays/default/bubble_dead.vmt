@@ -1,0 +1,7 @@
+LightmappedGeneric
+{
+	"$basetexture"    "decals\eitems\sprays\default\bubble_dead"
+	"$translucent"    "1"
+	"$decal"    "1"
+	"$decalscale"    "0.125"
+}

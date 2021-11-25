@@ -1,0 +1,94 @@
+"Phrases"
+{
+    "Spray cooldown"
+	{
+    	"#format"	"{1:i}"
+		"en"		"You need to wait {green}{1}{default} seconds to use spray."
+		"cze"		"Počkej ještě {green}{1}{default} sekund, abys mohl použít sprej."
+	}
+    "Spray too far"
+	{
+		"en"		"You are too far away from the wall to use spray."
+		"cze"		"Pro použití spreje jsi moc daleko od zdi."
+	}
+    "Choose collection"
+	{
+		"en"		"eSprays | Choose collection"
+		"cze"		"eSprays | Vyber si kolekci"
+	}
+    "Settings"
+	{
+		"en"		"Settings"
+		"cze"		"Nastavení"
+	}
+    "Choose spray"
+	{
+    	"#format"	"{1:s}"
+		"en"		"eSprays | Choose spray\n{1}"
+		"cze"		"eSprays | Vyber si sprej\n{1}"
+	}
+    "Disable spray"
+	{
+		"en"		"Disable spray"
+		"cze"		"Vypnout sprej"
+	}
+    "Settings title"
+	{
+		"en"		"eSprays | Settings"
+		"cze"		"eSprays | Nastavení"
+	}
+    "Use spray key"
+	{
+		"en"		"Use spray with key E"
+		"cze"		"Použít sprej klávesou E"
+	}
+    "Play spray sound"
+	{
+		"en"		"Play spray sound"
+		"cze"		"Přehrávat zvuk spreje"
+	}
+    "Current spray"
+	{
+    	"#format"	"{1:s}"
+		"en"		"Current spray\n└ {1}"
+		"cze"		"Aktuální sprej\n└ {1}"
+	}
+    "How to bind spray"
+	{
+		"en"		"How to bind spray\n└ bind KEY +spray"
+		"cze"		"Jak nabindovat sprej\n└ bind KLÁVESA +spray"
+	}
+    "Use spray with key E switch"
+	{
+    	"#format"	"{1:t}"
+		"en"		"You succesfully {green}{1}{default} use spray with E key."
+		"cze"		"Úspěšně sis {green}{1}{default} použití spreje klávesou E."
+	}
+    "Play spray sound switch"
+	{
+    	"#format"	"{1:t}"
+		"en"		"You've successfully {green}{1}{default} play spray sound."
+		"cze"		"Úspěšně sis {green}{1}{default} přehrání zvuku spreje."
+	}
+    "Enabled"
+	{
+		"en"		"enabled"
+		"cze"		"zapnul"
+	}
+    "Disabled"
+	{
+		"en"		"disabled"
+		"cze"		"vypnul"
+	}
+    "Sprays disabled"
+	{
+		"en"		"You've successfully disabled sprays."
+		"cze"		"Úspěšně sis vypnul spreje."
+	}
+    "Spray set"
+	{
+    	"#format"	"{1:s}"
+		"en"		"You've successfully set {green}{1}{default} spray."
+		"cze"		"Úspěšně sis nastavil {green}{1}{default} sprej."
+	}
+}
