@@ -1,5 +1,6 @@
 # eSprays
-###
+https://forums.alliedmods.net/showthread.php?t=335330
+
 With this plugin players can use default sprays in CS:GO (https://youtu.be/WQdQlosCOHI)
 
 - Commands: /sprays, /spray, /graffiti
