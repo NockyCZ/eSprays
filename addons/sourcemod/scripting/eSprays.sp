@@ -68,6 +68,7 @@ public void OnPluginStart()
 	RegConsoleCmd("+graffiti", SprayBind_CMD);
 	
 	HookEvent("player_spawn", PlayerSpawn_Event);
+	HookEvent("round_start", RoundStart_Event);
 	
 	for (int i = 1; i < MaxClients; i++)
 	if (AreClientCookiesCached(i))
@@ -139,6 +140,11 @@ public void OnClientDisconnect(int client)
 	
 	IntToString(g_bPlayerSpraySound[client], sValue, sizeof(sValue));
 	g_hPlayerSpraySound.Set(client, sValue);
+}
+
+public Action RoundStart_Event(Event event, const char[] name, bool dontBroadcast)
+{
+	g_iMaxSprays = 0;
 }
 
 public Action PlayerSpawn_Event(Event event, const char[] name, bool dontBroadcast)
