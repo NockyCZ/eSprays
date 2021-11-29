@@ -13,7 +13,7 @@
 		"en"		"You are too far away from the wall to use spray."
 		"cze"		"Pro použití spreje jsi moc daleko od zdi."
 		"tr"        	"Sprey yapabilmek için duvardan çok uzaktasın."
-		"ru" 		"Вы слишком далеко от стены, чтобы использовать спрей".
+		"ru" 		"Вы слишком далеко от стены, чтобы использовать спрей"
 	}
     	"Choose collection"
 	{
