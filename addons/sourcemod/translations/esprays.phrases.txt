@@ -108,4 +108,10 @@
 		"cze"		"Úspěšně sis nastavil {green}{1}{default} sprej."
 		"tr"        	"Spreyiniz {green}{1}{default} olarak değiştirildi."
 	}
+	"Max Sprays Created"
+	{
+		"en"		"This round has been used a lot of sprays."
+		"cze"		"Tohle kolo bylo použito už moc sprejů."
+		"tr"		"Bu turda çok fazla sprey kullanıldı."
+	}
 }
