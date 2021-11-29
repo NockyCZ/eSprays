@@ -11,6 +11,7 @@ bool g_bPlayerSprayButton[MAXPLAYERS + 1];
 bool g_bPlayerSpraySound[MAXPLAYERS + 1];
 int g_iPlayerSelectedSpray[MAXPLAYERS + 1];
 int g_iLastSpray[MAXPLAYERS + 1];
+int g_iMaxSprays = 0;
 
 Cookie g_hPlayerSprayButton = null;
 Cookie g_hPlayerSelectedSpray = null;
@@ -18,9 +19,11 @@ Cookie g_hPlayerSpraySound = null;
 
 ConVar g_cvSprayCooldown;
 ConVar g_cvSprayDistance;
+ConVar g_cvMaxSprays;
 ConVar g_cvPrefix;
 char g_sSprayCooldown[10];
 char g_sSprayDistance[10];
+char g_sMaxSprays[10];
 char g_sPrefix[64];
 
 public Plugin myinfo = 
@@ -28,7 +31,7 @@ public Plugin myinfo =
 	name = "eSprays", 
 	author = "Nocky", 
 	description = "Use default CS:GO Sprays", 
-	version = "1.0", 
+	version = "1.1", 
 	url = "https://github.com/NockyCZ"
 };
 
@@ -45,6 +48,10 @@ public void OnPluginStart()
 	g_cvPrefix = CreateConVar("sm_esprays_prefix", "{darkred}[eSprays]{default}", "Prefix for chat messages");
 	g_cvPrefix.AddChangeHook(OnConVarChanged);
 	g_cvPrefix.GetString(g_sPrefix, sizeof(g_sPrefix));
+	
+	g_cvMaxSprays = CreateConVar("sm_esprays_maxsprays", "20", "Max sprays in one round");
+	g_cvMaxSprays.AddChangeHook(OnConVarChanged);
+	g_cvMaxSprays.GetString(g_sMaxSprays, sizeof(g_sMaxSprays));
 	
 	AutoExecConfig(true, "eSprays");
 	
@@ -69,6 +76,7 @@ public void OnPluginStart()
 
 public void OnMapStart()
 {
+	g_iMaxSprays = 0;
 	PrecacheSound("items/spraycan_spray.wav", true);
 	PrecacheSound("items/spraycan_shake.wav", true);
 }
@@ -89,6 +97,11 @@ public void OnConVarChanged(ConVar convar, const char[] oldValue, const char[] n
 	{
 		strcopy(g_sPrefix, sizeof(g_sPrefix), newValue);
 		g_cvPrefix.SetString(newValue);
+	}
+	else if (convar == g_cvMaxSprays)
+	{
+		strcopy(g_sMaxSprays, sizeof(g_sMaxSprays), newValue);
+		g_cvMaxSprays.SetString(newValue);
 	}
 }
 
@@ -178,6 +191,12 @@ void CreateSpray(int client, bool bRunCmd)
 		return;
 	}
 	
+	if (g_iMaxSprays > StringToInt(g_sMaxSprays))
+	{
+		CPrintToChat(client, "%s %t", g_sPrefix, "Max Sprays Created");
+		return;
+	}
+	
 	float fClientEyePosition[3];
 	GetClientEyePosition(client, fClientEyePosition);
 	
@@ -204,6 +223,8 @@ void CreateSpray(int client, bool bRunCmd)
 	g_iLastSpray[client] = iTime;
 	eItems_GetSprayMaterialPathByDefIndex(g_iPlayerSelectedSpray[client], sSprayPath, sizeof(sSprayPath));
 	TE_SetupBSPDecal(fClientEyeViewPoint, PrecacheDecal(sSprayPath));
+	g_iMaxSprays++;
+	//TE_SetupBSPDecal(fClientEyeViewPoint, g_iPlayerSelectedSpray[client]);
 }
 
 public Action PlaySecondSound_Timer(Handle timer, int client)
