@@ -7,6 +7,7 @@
 		"cze"		"Počkej ještě {green}{1}{default} sekund, abys mohl použít sprej."
 		"tr"        	"Sprey kullanabilmek için {green}{1}{default} saniye beklemeniz gerekiyor."
 		"ru"		"Вам нужно подождать {green}{1}{default} секунд, чтобы использовать спрей."
+		"da"		"Du skal vente i {green}{1}{default} sekunder for du kan benytte dette spray."
 	}
    	"Spray too far"
 	{
@@ -14,6 +15,7 @@
 		"cze"		"Pro použití spreje jsi moc daleko od zdi."
 		"tr"        	"Sprey yapabilmek için duvardan çok uzaktasın."
 		"ru" 		"Вы слишком далеко от стены, чтобы использовать спрей"
+		"da"		"Du er for langt fra en væg til at kunne benytte dette spray."
 	}
     	"Choose collection"
 	{
@@ -21,6 +23,7 @@
 		"cze"		"eSprays | Vyber si kolekci"
 		"tr"		"Spreyler | Koleksiyon seç"
 		"ru" 		"eSprays | Выбрать коллекцию"
+		"da"		"eSprays | Vælg kollektion"
 	}
     	"Settings"
 	{
@@ -28,6 +31,7 @@
 		"cze"		"Nastavení"
 		"tr"        	"Ayarlar"
 		"ru" 		"Настройки"
+		"da"		"Indstillinger"
 	}
     	"Choose spray"
 	{
@@ -36,6 +40,7 @@
 		"cze"		"eSprays | Vyber si sprej\n{1}"
 		"tr"        	"Spreyler | Sprey seçin\n{1}"
 		"ru" 		"eSprays | Выбрать спрей \n{1}"
+		"da"		"eSprays | Vælg spray\n{1}"
 	}
     	"Disable spray"
 	{
@@ -43,6 +48,7 @@
 		"cze"		"Vypnout sprej"
 		"tr"        	"Sprey Kapalı"
 		"ru" 		"Отключить спрей"
+		"da"		"Fravælg spray"
 	}
     	"Settings title"
 	{
@@ -50,6 +56,7 @@
 		"cze"		"eSprays | Nastavení"
 		"tr"        	"Spreyler | Ayarlar"
 		"ru" 		"eSprays | Настройки"
+		"da"		"eSprays | Indstillinger"
 	}
     	"Use spray key"
 	{
@@ -57,6 +64,7 @@
 		"cze"		"Použít sprej klávesou E"
 		"tr"		"Hızlı sprey yapmak için 'E' tuşu"
 		"ru" 		"Используйте спрей с помощью клавиши E"
+		"da"		"Brug spray med knappen E"
 	}
     	"Play spray sound"
 	{
@@ -64,6 +72,7 @@
 		"cze"		"Přehrávat zvuk spreje"
 		"tr"		"Sprey sesi"
 		"ru" 		"Воспроизвести звук стрея"
+		"da"		"Afspil spray lyd"
 	}
     	"Current spray"
 	{
@@ -72,6 +81,7 @@
 		"cze"		"Aktuální sprej\n└ {1}"
 		"tr"        	"Mevcut spreyiniz\n└ {1}"
 		"ru" 		"Текущий спрей\n└ {1}"
+		"da"		"Nuværende spray\n└ {1}"
 	}
     	"How to bind spray"
 	{
@@ -79,6 +89,7 @@
 		"cze"		"Jak nabindovat sprej\n└ bind KLÁVESA +spray"
 		"tr"        	"Nasıl spray yapabilirim?\n└ bind 'TUŞ' +spray"
 		"ru" 		"Как забиндить спрей\n└ bind КЛАВИША +spray"
+		"da"		"Hvordan binder man spray\n└ bind KEY +spray"
 	}
     	"Use spray with key E switch"
 	{
@@ -87,6 +98,7 @@
 		"cze"		"Úspěšně sis {green}{1}{default} použití spreje klávesou E."
 		"tr"        	"{orange}E{default} sprey tuşunuz {green}{1}{default} olarak değiştirildi."
 		"ru" 		"Вы успешно {green}{1}{default} использовали спрей с клавишей E."
+		"da"		"Du har valgt {green}{1}{default} benyt knappen E for at spray."
 	}
     	"Play spray sound switch"
 	{
@@ -95,6 +107,7 @@
 		"cze"		"Úspěšně sis {green}{1}{default} přehrání zvuku spreje."
 		"tr"        	"Sprey sesiniz {green}{1}{default} olarak değiştirildi."
 		"ru" 		"Вы успешно {green}{1}{default} включили звук спрея."
+		"da"		"Du har valgt {green}{1}{default} spil spray lyd."
 	}
     	"Enabled"
 	{
@@ -102,6 +115,7 @@
 		"cze"		"zapnul"
 		"tr"		"Açık"
 		"ru" 		"включено"
+		"da"		"aktiveret"
 	}
    	"Disabled"
 	{
@@ -109,6 +123,7 @@
 		"cze"		"vypnul"
 		"tr"       	"Kapalı"
 		"ru" 		"отключено"
+		"da"		"deaktiveret"
 	}
     	"Sprays disabled"
 	{
@@ -116,6 +131,7 @@
 		"cze"		"Úspěšně sis vypnul spreje."
 		"tr"        	"Sprey sistemini devre dışı bıraktınız." 
 		"ru" 		"Вы успешно отключили спреи."
+		"da"		"Du har deaktiveret sprays."
 	}
     	"Spray set"
 	{
@@ -124,11 +140,13 @@
 		"cze"		"Úspěšně sis nastavil {green}{1}{default} sprej."
 		"tr"        	"Spreyiniz {green}{1}{default} olarak değiştirildi."
 		"ru" 		"Вы успешно установили {green}{1}{default} спрей."
+		"da"		"Du har valgt {green}{1}{default} spray."
 	}
 	"Max Sprays Created"
 	{
-		"en"		"This round has been used a lot of sprays."
+		"en"		"This round has reached maximum amount of sprays."
 		"cze"		"Tohle kolo bylo použito už moc sprejů."
 		"tr"		"Bu turda çok fazla sprey kullanıldı."
+		"da"		"Denne runde har nået sit maksimale antal sprays."
 	}
 }
