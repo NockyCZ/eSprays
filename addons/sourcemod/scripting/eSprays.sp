@@ -227,7 +227,10 @@ void CreateSpray(int client, bool bRunCmd)
 		return;
 	}
 	if (!ClientHasSpray(client))
-		return;
+	{
+		if (!g_bPlayerRandomSpray[client])
+			return;
+	}
 	
 	if (g_bPlayerSpraySound[client])
 	{
@@ -368,9 +371,6 @@ int PlayerSettingsMenu_Handler(Menu menu, MenuAction action, int client, int par
 				{
 					g_bPlayerRandomSpray[client] = !g_bPlayerRandomSpray[client];
 					CPrintToChat(client, "%s %t", g_sPrefix, "Random spray switch", g_bPlayerRandomSpray[client] ? "Enabled" : "Disabled");
-					int iSpray = GetRandomInt(1, eItems_GetSpraysCount());
-					int iSprayDefIndex = eItems_GetSprayDefIndexBySprayNum(iSpray);
-					g_iPlayerSelectedSpray[client] = iSprayDefIndex;
 					PlayerSettingsMenu(client);
 				}
 			}
