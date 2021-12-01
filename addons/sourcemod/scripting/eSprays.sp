@@ -9,18 +9,23 @@
 
 bool g_bPlayerSprayButton[MAXPLAYERS + 1];
 bool g_bPlayerSpraySound[MAXPLAYERS + 1];
+bool g_bPlayerRandomSpray[MAXPLAYERS + 1];
 int g_iPlayerSelectedSpray[MAXPLAYERS + 1];
 int g_iLastSpray[MAXPLAYERS + 1];
+int g_iMaxSprays = 0;
 
 Cookie g_hPlayerSprayButton = null;
 Cookie g_hPlayerSelectedSpray = null;
 Cookie g_hPlayerSpraySound = null;
+Cookie g_hPlayerRandomSpray = null;
 
 ConVar g_cvSprayCooldown;
 ConVar g_cvSprayDistance;
+ConVar g_cvMaxSprays;
 ConVar g_cvPrefix;
 char g_sSprayCooldown[10];
 char g_sSprayDistance[10];
+char g_sMaxSprays[10];
 char g_sPrefix[64];
 
 public Plugin myinfo = 
@@ -28,7 +33,7 @@ public Plugin myinfo =
 	name = "eSprays", 
 	author = "Nocky", 
 	description = "Use default CS:GO Sprays", 
-	version = "1.1", 
+	version = "1.2", 
 	url = "https://github.com/NockyCZ"
 };
 
@@ -46,13 +51,17 @@ public void OnPluginStart()
 	g_cvPrefix.AddChangeHook(OnConVarChanged);
 	g_cvPrefix.GetString(g_sPrefix, sizeof(g_sPrefix));
 	
-	AutoExecConfig(true, "eSprays");
+	g_cvMaxSprays = CreateConVar("sm_esprays_maxsprays", "20", "Max sprays in round");
+	g_cvMaxSprays.AddChangeHook(OnConVarChanged);
+	g_cvMaxSprays.GetString(g_sMaxSprays, sizeof(g_sMaxSprays));
 	
+	AutoExecConfig(true, "eSprays");
 	LoadTranslations("esprays.phrases");
 	
 	g_hPlayerSprayButton = view_as<Cookie>(RegClientCookie("esprays_use", "Enable/disable use spray with E", CookieAccess_Private));
 	g_hPlayerSpraySound = view_as<Cookie>(RegClientCookie("esprays_sound", "Enable/disable spray sound", CookieAccess_Private));
 	g_hPlayerSelectedSpray = view_as<Cookie>(RegClientCookie("esprays_spray", "Client's selected spray", CookieAccess_Private));
+	g_hPlayerRandomSpray = view_as<Cookie>(RegClientCookie("esprays_randomspray", "If client has random sprays", CookieAccess_Private));
 	
 	RegConsoleCmd("sm_spray", Spray_CMD);
 	RegConsoleCmd("sm_sprays", Spray_CMD);
@@ -61,6 +70,7 @@ public void OnPluginStart()
 	RegConsoleCmd("+graffiti", SprayBind_CMD);
 	
 	HookEvent("player_spawn", PlayerSpawn_Event);
+	HookEvent("round_start", RoundStart_Event);
 	
 	for (int i = 1; i < MaxClients; i++)
 	if (AreClientCookiesCached(i))
@@ -69,6 +79,7 @@ public void OnPluginStart()
 
 public void OnMapStart()
 {
+	g_iMaxSprays = 0;
 	PrecacheSound("items/spraycan_spray.wav", true);
 	PrecacheSound("items/spraycan_shake.wav", true);
 }
@@ -90,6 +101,11 @@ public void OnConVarChanged(ConVar convar, const char[] oldValue, const char[] n
 		strcopy(g_sPrefix, sizeof(g_sPrefix), newValue);
 		g_cvPrefix.SetString(newValue);
 	}
+	else if (convar == g_cvMaxSprays)
+	{
+		strcopy(g_sMaxSprays, sizeof(g_sMaxSprays), newValue);
+		g_cvMaxSprays.SetString(newValue);
+	}
 }
 
 public void OnClientCookiesCached(int client)
@@ -107,6 +123,12 @@ public void OnClientCookiesCached(int client)
 		g_bPlayerSpraySound[client] = true;
 	else
 		g_bPlayerSpraySound[client] = view_as<bool>(StringToInt(sValue));
+	
+	g_hPlayerRandomSpray.Get(client, sValue, sizeof(sValue));
+	if (sValue[0] == '\0')
+		g_bPlayerRandomSpray[client] = false;
+	else
+		g_bPlayerRandomSpray[client] = view_as<bool>(StringToInt(sValue));
 	
 	g_hPlayerSelectedSpray.Get(client, sValue, sizeof(sValue));
 	if (sValue[0] == '\0')
@@ -126,6 +148,11 @@ public void OnClientDisconnect(int client)
 	
 	IntToString(g_bPlayerSpraySound[client], sValue, sizeof(sValue));
 	g_hPlayerSpraySound.Set(client, sValue);
+}
+
+public Action RoundStart_Event(Event event, const char[] name, bool dontBroadcast)
+{
+	g_iMaxSprays = 0;
 }
 
 public Action PlayerSpawn_Event(Event event, const char[] name, bool dontBroadcast)
@@ -155,7 +182,7 @@ Action Spray_CMD(int client, int args)
 
 public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon)
 {
-	if (g_iPlayerSelectedSpray[client] == -1 || !g_bPlayerSprayButton[client] || !IsValidClient(client, true))
+	if (!g_bPlayerSprayButton[client] || !IsValidClient(client, true))
 		return;
 	
 	int oldButtons = GetEntProp(client, Prop_Data, "m_nOldButtons");
@@ -178,6 +205,12 @@ void CreateSpray(int client, bool bRunCmd)
 		return;
 	}
 	
+	if (g_iMaxSprays > StringToInt(g_sMaxSprays))
+	{
+		CPrintToChat(client, "%s %t", g_sPrefix, "Max Sprays Created");
+		return;
+	}
+	
 	float fClientEyePosition[3];
 	GetClientEyePosition(client, fClientEyePosition);
 	
@@ -193,6 +226,8 @@ void CreateSpray(int client, bool bRunCmd)
 			CPrintToChat(client, "%s %t", g_sPrefix, "Spray too far");
 		return;
 	}
+	if (!ClientHasSpray(client))
+		return;
 	
 	if (g_bPlayerSpraySound[client])
 	{
@@ -202,9 +237,19 @@ void CreateSpray(int client, bool bRunCmd)
 	
 	char sSprayPath[PLATFORM_MAX_PATH];
 	g_iLastSpray[client] = iTime;
-	eItems_GetSprayMaterialPathByDefIndex(g_iPlayerSelectedSpray[client], sSprayPath, sizeof(sSprayPath));
-	TE_SetupBSPDecal(fClientEyeViewPoint, PrecacheDecal(sSprayPath));
+	g_iMaxSprays++;
 	
+	if (g_bPlayerRandomSpray[client])
+	{
+		int iSpray = GetRandomInt(1, eItems_GetSpraysCount());
+		int iSprayDefIndex = eItems_GetSprayDefIndexBySprayNum(iSpray);
+		eItems_GetSprayMaterialPathByDefIndex(iSprayDefIndex, sSprayPath, sizeof(sSprayPath));
+	}
+	else
+	{
+		eItems_GetSprayMaterialPathByDefIndex(g_iPlayerSelectedSpray[client], sSprayPath, sizeof(sSprayPath));
+	}
+	TE_SetupBSPDecal(fClientEyeViewPoint, PrecacheDecal(sSprayPath));
 }
 
 public Action PlaySecondSound_Timer(Handle timer, int client)
@@ -242,7 +287,7 @@ void ChooseSetMenu(int client)
 	}
 	
 	menu.ExitButton = true;
-	menu.ExitBackButton = true;
+	menu.ExitBackButton = false;
 	menu.Display(client, MENU_TIME_FOREVER);
 }
 
@@ -285,12 +330,14 @@ void PlayerSettingsMenu(int client)
 	
 	Format(sText, sizeof(sText), "%T [%s]", "Use spray key", client, g_bPlayerSprayButton[client] ? "ON" : "OFF");
 	menu.AddItem("0", sText);
-	Format(sText, sizeof(sText), "%T [%s]\n ", "Play spray sound", client, g_bPlayerSpraySound[client] ? "ON" : "OFF");
+	Format(sText, sizeof(sText), "%T [%s]", "Play spray sound", client, g_bPlayerSpraySound[client] ? "ON" : "OFF");
 	menu.AddItem("1", sText);
+	Format(sText, sizeof(sText), "%T [%s]\n ", "Random spray", client, g_bPlayerRandomSpray[client] ? "ON" : "OFF");
+	menu.AddItem("2", sText);
 	Format(sText, sizeof(sText), "%T\n ", "Current spray", client, sSprayName);
-	menu.AddItem("2", sText, ITEMDRAW_DISABLED);
-	Format(sText, sizeof(sText), "%T", "How to bind spray", client);
 	menu.AddItem("3", sText, ITEMDRAW_DISABLED);
+	Format(sText, sizeof(sText), "%T", "How to bind spray", client);
+	menu.AddItem("4", sText, ITEMDRAW_DISABLED);
 	
 	menu.ExitButton = true;
 	menu.ExitBackButton = true;
@@ -315,6 +362,15 @@ int PlayerSettingsMenu_Handler(Menu menu, MenuAction action, int client, int par
 				{
 					g_bPlayerSpraySound[client] = !g_bPlayerSpraySound[client];
 					CPrintToChat(client, "%s %t", g_sPrefix, "Play spray sound switch", g_bPlayerSpraySound[client] ? "Enabled" : "Disabled");
+					PlayerSettingsMenu(client);
+				}
+				case 2:
+				{
+					g_bPlayerRandomSpray[client] = !g_bPlayerRandomSpray[client];
+					CPrintToChat(client, "%s %t", g_sPrefix, "Random spray switch", g_bPlayerRandomSpray[client] ? "Enabled" : "Disabled");
+					int iSpray = GetRandomInt(1, eItems_GetSpraysCount());
+					int iSprayDefIndex = eItems_GetSprayDefIndexBySprayNum(iSpray);
+					g_iPlayerSelectedSpray[client] = iSprayDefIndex;
 					PlayerSettingsMenu(client);
 				}
 			}
@@ -384,11 +440,6 @@ int ChooseSetMenu_Handler(Menu menu, MenuAction action, int client, int param2)
 			int iSetNum = StringToInt(sBuffer);
 			ChooseSprayMenu(client, iSetNum);
 		}
-		case MenuAction_Cancel:
-		{
-			if (param2 == MenuCancel_ExitBack)
-				ClientCommand(client, "sm_valve");
-		}
 		case MenuAction_End:
 		{
 			delete menu;
@@ -419,6 +470,17 @@ stock bool GetPlayerEyeViewPoint(int client, float fPosition[3])
 public bool TraceEntityFilterPlayer(int iEntity, int iContentsMask)
 {
 	return iEntity > MaxClients;
+}
+
+stock bool ClientHasSpray(int client)
+{
+	for (int i = 0; i < eItems_GetSpraysCount(); i++)
+	{
+		int iSpray = eItems_GetSprayDefIndexBySprayNum(i);
+		if (iSpray == g_iPlayerSelectedSpray[client])
+			return true;
+	}
+	return false;
 }
 
 stock bool IsValidClient(int client, bool alive = false)
