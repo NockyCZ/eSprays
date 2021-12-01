@@ -144,7 +144,6 @@
 	}
 	"Max Sprays Created"
 	{
-		"en"		"This round has been used a lot of sprays."
 		"en"		"This round has reached maximum amount of sprays."
 		"cze"		"Tohle kolo bylo použito už moc sprejů."
 		"tr"		"Bu turda çok fazla sprey kullanıldı."
