@@ -146,6 +146,9 @@ public void OnClientDisconnect(int client)
 	IntToString(g_iPlayerSelectedSpray[client], sValue, sizeof(sValue));
 	g_hPlayerSelectedSpray.Set(client, sValue);
 	
+	IntToString(g_bPlayerRandomSpray[client], sValue, sizeof(sValue));
+	g_hPlayerRandomSpray.Set(client, sValue);
+	
 	IntToString(g_bPlayerSpraySound[client], sValue, sizeof(sValue));
 	g_hPlayerSpraySound.Set(client, sValue);
 }
