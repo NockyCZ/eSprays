@@ -9,7 +9,6 @@ With this plugin players can use default sprays in CS:GO (https://youtu.be/WQdQl
 
 ### Requirements
  - [eItems](https://github.com/ESK0/eItems) (latest)
- - [PTaH](https://github.com/komashchenko/PTaH)
 
 ### Installation
 1. Download files
