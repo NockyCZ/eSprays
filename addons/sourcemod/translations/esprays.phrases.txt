@@ -4,6 +4,7 @@
 	{
 		"#format"	"{1:i}"
 		"en"		"You need to wait {green}{1}{default} seconds to use spray."
+		"pt"		"Você precisa esperar {green}{1} segundos{default}para usar o spray."
 		"cze"		"Počkej ještě {green}{1}{default} sekund, abys mohl použít sprej."
 		"tr"		"Sprey kullanabilmek için {green}{1}{default} saniye beklemeniz gerekiyor."
 		"ru"		"Вам нужно подождать {green}{1}{default} секунд, чтобы использовать спрей."
@@ -12,6 +13,7 @@
 	"Spray too far"
 	{
 		"en"		"You are too far away from the wall to use spray."
+		"pt"		"Você está muito longe da parede para usar spray."
 		"cze"		"Pro použití spreje jsi moc daleko od zdi."
 		"tr"		"Sprey yapabilmek için duvardan çok uzaktasın."
 		"ru"		"Вы слишком далеко от стены, чтобы использовать спрей"
@@ -20,6 +22,7 @@
 	"Choose collection"
 	{
 		"en"		"eSprays | Choose collection"
+		"pt"		"eSprays | Escolha a coleção"
 		"cze"		"eSprays | Vyber si kolekci"
 		"tr"		"Spreyler | Koleksiyon seç"
 		"ru"		"eSprays | Выбрать коллекцию"
@@ -28,6 +31,7 @@
 	"Settings"
 	{
 		"en"		"Settings"
+		"pt"		"Configurações"
 		"cze"		"Nastavení"
 		"tr"		"Ayarlar"
 		"ru"		"Настройки"
@@ -37,6 +41,7 @@
 	{
 		"#format"	"{1:s}"
 		"en"		"eSprays | Choose spray\n{1}"
+		"pt"		"eSprays | Escolha o spray\n{1}"
 		"cze"		"eSprays | Vyber si sprej\n{1}"
 		"tr"		"Spreyler | Sprey seçin\n{1}"
 		"ru"		"eSprays | Выбрать спрей \n{1}"
@@ -45,6 +50,7 @@
 	"Disable spray"
 	{
 		"en"		"Disable spray"
+		"pt"		"Desativar spray"
 		"cze"		"Vypnout sprej"
 		"tr"		"Sprey Kapalı"
 		"ru"		"Отключить спрей"
@@ -53,6 +59,7 @@
 	"Settings title"
 	{
 		"en"		"eSprays | Settings"
+		"pt"		"eSprays | Configurações"
 		"cze"		"eSprays | Nastavení"
 		"tr"		"Spreyler | Ayarlar"
 		"ru"		"eSprays | Настройки"
@@ -61,6 +68,7 @@
 	"Use spray key"
 	{
 		"en"		"Use spray with key E"
+		"pt"		"Use spray com tecla E"
 		"cze"		"Použít sprej klávesou E"
 		"tr"		"Hızlı sprey yapmak için 'E' tuşu"
 		"ru"		"Используйте спрей с помощью клавиши E"
@@ -69,6 +77,7 @@
 	"Play spray sound"
 	{
 		"en"		"Play spray sound"
+		"pt"		"Reproduzir som de spray"
 		"cze"		"Přehrávat zvuk spreje"
 		"tr"		"Sprey sesi"
 		"ru"		"Воспроизвести звук стрея"
@@ -78,6 +87,7 @@
 	{
 		"#format"	"{1:s}"
 		"en"		"Current spray\n└ {1}"
+		"pt"		"Spray atual\n└ {1}"
 		"cze"		"Aktuální sprej\n└ {1}"
 		"tr"		"Mevcut spreyiniz\n└ {1}"
 		"ru"		"Текущий спрей\n└ {1}"
@@ -86,6 +96,7 @@
 	"How to bind spray"
 	{
 		"en"		"How to bind spray\n└ bind KEY +spray"
+		"pt"		"How to bind spray\n└ bind KEY +spray"
 		"cze"		"Jak nabindovat sprej\n└ bind KLÁVESA +spray"
 		"tr"		"Nasıl spray yapabilirim?\n└ bind 'TUŞ' +spray"
 		"ru"		"Как забиндить спрей\n└ bind КЛАВИША +spray"
@@ -95,6 +106,7 @@
 	{
 		"#format"	"{1:t}"
 		"en"		"You've succesfully {green}{1}{default} use spray with E key."
+		"pt"		"You've succesfully {green}{1}{default} use spray with E key."
 		"cze"		"Úspěšně sis {green}{1}{default} použití spreje klávesou E."
 		"tr"		"{orange}E{default} sprey tuşunuz {green}{1}{default} olarak değiştirildi."
 		"ru"		"Вы успешно {green}{1}{default} использовали спрей с клавишей E."
@@ -104,6 +116,7 @@
 	{
 		"#format"	"{1:t}"
 		"en"		"You've successfully {green}{1}{default} play spray sound."
+		"pt"		"Você {green}{1}{default} reproduziu com sucesso o som do spray."
 		"cze"		"Úspěšně sis {green}{1}{default} přehrání zvuku spreje."
 		"tr"		"Sprey sesiniz {green}{1}{default} olarak değiştirildi."
 		"ru"		"Вы успешно {green}{1}{default} включили звук спрея."
@@ -112,6 +125,7 @@
 	"Enabled"
 	{
 		"en"		"enabled"
+		"pt"		"habilitado"
 		"cze"		"zapnul"
 		"tr"		"Açık"
 		"ru"		"включено"
@@ -120,6 +134,7 @@
 	"Disabled"
 	{
 		"en"		"disabled"
+		"pt"		"desabilitado"
 		"cze"		"vypnul"
 		"tr"		"Kapalı"
 		"ru"		"отключено"
@@ -128,6 +143,7 @@
 	"Sprays disabled"
 	{
 		"en"		"You've successfully disabled sprays."
+		"pt"		"Você desativou os sprays com sucesso."
 		"cze"		"Úspěšně sis vypnul spreje."
 		"tr"		"Sprey sistemini devre dışı bıraktınız."
 		"ru"		"Вы успешно отключили спреи."
@@ -137,6 +153,7 @@
 	{
 		"#format"	"{1:s}"
 		"en"		"You've successfully set {green}{1}{default} spray."
+		"pt"		"Você configurou o spray {green}{1}{default} com sucesso."
 		"cze"		"Úspěšně sis nastavil {green}{1}{default} sprej."
 		"tr"		"Spreyiniz {green}{1}{default} olarak değiştirildi."
 		"ru"		"Вы успешно установили {green}{1}{default} спрей."
@@ -145,6 +162,7 @@
 	"Max Sprays Created"
 	{
 		"en"		"This round has reached maximum amount of sprays."
+		"pt"		"Este round atingiu a quantidade máxima de sprays."
 		"cze"		"Tohle kolo bylo použito už moc sprejů."
 		"tr"		"Bu turda çok fazla sprey kullanıldı."
 		"da"		"Denne runde har nået sit maksimale antal sprays."
@@ -153,11 +171,13 @@
 	{
 		"#format"	"{1:t}"
 		"en"		"You've successfully {green}{1}{default} random sprays."
+		"pt"		"Você {green}{1}{default} sprays aleatórios com sucesso."
 		"cze"		"Úspěšně sis {green}{1}{default} náhodný spreje."
 	}
 	"Random spray"
 	{
 		"en"		"Random sprays"
+		"pt"		"Sprays aleatórios"
 		"cze"		"Náhodný spreje"
 	}
 }
