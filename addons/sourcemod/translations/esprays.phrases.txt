@@ -134,7 +134,7 @@
 	"Disabled"
 	{
 		"en"		"disabled"
-		"pt"		"desabilitado"
+		"pt"		"desabilitou"
 		"cze"		"vypnul"
 		"tr"		"Kapalı"
 		"ru"		"отключено"
@@ -143,7 +143,7 @@
 	"Sprays disabled"
 	{
 		"en"		"You've successfully disabled sprays."
-		"pt"		"Você desativou os sprays com sucesso."
+		"pt"		"Você desabilitou os sprays com sucesso."
 		"cze"		"Úspěšně sis vypnul spreje."
 		"tr"		"Sprey sistemini devre dışı bıraktınız."
 		"ru"		"Вы успешно отключили спреи."
