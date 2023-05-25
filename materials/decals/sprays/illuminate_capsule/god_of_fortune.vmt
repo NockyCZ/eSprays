@@ -1,0 +1,7 @@
+LightmappedGeneric
+{
+	"$basetexture"    "decals\sprays\illuminate_capsule\god_of_fortune"
+	"$translucent"    "1"
+	"$decal"    "1"
+	"$decalscale"    "0.09"
+}
