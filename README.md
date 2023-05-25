@@ -6,11 +6,10 @@ With this plugin players can use default sprays in CS:GO (https://youtu.be/WQdQl
 - Commands: /sprays, /spray, /graffiti
 - Bind on use spray **bind KEY +spray**
 
-
-### Requirements
+## Requirements
  - [eItems](https://github.com/ESK0/eItems) (latest)
 
-### Installation
+## Installation
 1. Download files
 2. Upload **eSprays.smx**, **esprays.phrases.txt** and all **material** files to your server
 3. Set `"DownloadSprays": true` in */sourcemod/configs/eItems.json*
