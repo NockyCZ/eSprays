@@ -96,7 +96,7 @@
 	"How to bind spray"
 	{
 		"en"		"How to bind spray\n└ bind KEY +spray"
-		"pt"		"How to bind spray\n└ bind KEY +spray"
+		"pt"		"Como binar spray\n└ bind KEY +spray"
 		"cze"		"Jak nabindovat sprej\n└ bind KLÁVESA +spray"
 		"tr"		"Nasıl spray yapabilirim?\n└ bind 'TUŞ' +spray"
 		"ru"		"Как забиндить спрей\n└ bind КЛАВИША +spray"
@@ -106,7 +106,7 @@
 	{
 		"#format"	"{1:t}"
 		"en"		"You've succesfully {green}{1}{default} use spray with E key."
-		"pt"		"You've succesfully {green}{1}{default} use spray with E key."
+		"pt"		"Você {green}{1}{default} usou spray com a tecla E com sucesso."
 		"cze"		"Úspěšně sis {green}{1}{default} použití spreje klávesou E."
 		"tr"		"{orange}E{default} sprey tuşunuz {green}{1}{default} olarak değiştirildi."
 		"ru"		"Вы успешно {green}{1}{default} использовали спрей с клавишей E."
@@ -125,7 +125,7 @@
 	"Enabled"
 	{
 		"en"		"enabled"
-		"pt"		"habilitado"
+		"pt"		"habilitou"
 		"cze"		"zapnul"
 		"tr"		"Açık"
 		"ru"		"включено"
