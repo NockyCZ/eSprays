@@ -1,0 +1,7 @@
+LightmappedGeneric
+{
+	"$basetexture"    "decals\sprays\illuminate_capsule\nezha"
+	"$translucent"    "1"
+	"$decal"    "1"
+	"$decalscale"    "0.09"
+}
