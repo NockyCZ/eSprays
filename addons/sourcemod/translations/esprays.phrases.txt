@@ -4,6 +4,7 @@
 	{
 		"#format"	"{1:i}"
 		"en"		"You need to wait {green}{1}{default} seconds to use spray."
+		"fr"		"Vous devez attendre {green}{1}{default} secondes avant de réutiliser le graffiti."
 		"pt"		"Você precisa esperar {green}{1} segundos{default}para usar o spray."
 		"cze"		"Počkej ještě {green}{1}{default} sekund, abys mohl použít sprej."
 		"tr"		"Sprey kullanabilmek için {green}{1}{default} saniye beklemeniz gerekiyor."
@@ -13,6 +14,7 @@
 	"Spray too far"
 	{
 		"en"		"You are too far away from the wall to use spray."
+		"fr"		"Vous êtes trop loin du mur pour appliquer le graffiti."
 		"pt"		"Você está muito longe da parede para usar spray."
 		"cze"		"Pro použití spreje jsi moc daleko od zdi."
 		"tr"		"Sprey yapabilmek için duvardan çok uzaktasın."
@@ -22,15 +24,17 @@
 	"Choose collection"
 	{
 		"en"		"eSprays | Choose collection"
+		"fr"		"eSprays | Choisi ta collection"
 		"pt"		"eSprays | Escolha a coleção"
 		"cze"		"eSprays | Vyber si kolekci"
-		"tr"		"Spreyler | Koleksiyon seç"
+		"tr"		"eSprays | Koleksiyon seç"
 		"ru"		"eSprays | Выбрать коллекцию"
 		"da"		"eSprays | Vælg kollektion"
 	}
 	"Settings"
 	{
 		"en"		"Settings"
+		"fr"		"Paramètres"
 		"pt"		"Configurações"
 		"cze"		"Nastavení"
 		"tr"		"Ayarlar"
@@ -41,15 +45,17 @@
 	{
 		"#format"	"{1:s}"
 		"en"		"eSprays | Choose spray\n{1}"
+		"fr"		"eSprays | Choisi ton graffiti"
 		"pt"		"eSprays | Escolha o spray\n{1}"
 		"cze"		"eSprays | Vyber si sprej\n{1}"
-		"tr"		"Spreyler | Sprey seçin\n{1}"
+		"tr"		"eSprays | Sprey seçin\n{1}"
 		"ru"		"eSprays | Выбрать спрей \n{1}"
 		"da"		"eSprays | Vælg spray\n{1}"
 	}
 	"Disable spray"
 	{
 		"en"		"Disable spray"
+		"fr"		"Désactiver le graffiti"
 		"pt"		"Desativar spray"
 		"cze"		"Vypnout sprej"
 		"tr"		"Sprey Kapalı"
@@ -59,15 +65,17 @@
 	"Settings title"
 	{
 		"en"		"eSprays | Settings"
+		"fr"		"eSprays | Paramètres"
 		"pt"		"eSprays | Configurações"
 		"cze"		"eSprays | Nastavení"
-		"tr"		"Spreyler | Ayarlar"
+		"tr"		"eSprays | Ayarlar"
 		"ru"		"eSprays | Настройки"
 		"da"		"eSprays | Indstillinger"
 	}
 	"Use spray key"
 	{
 		"en"		"Use spray with key E"
+		"fr"		"Applique les graffitis avec la touche <E>"
 		"pt"		"Use spray com tecla E"
 		"cze"		"Použít sprej klávesou E"
 		"tr"		"Hızlı sprey yapmak için 'E' tuşu"
@@ -77,6 +85,7 @@
 	"Play spray sound"
 	{
 		"en"		"Play spray sound"
+		"fr"		"Jouer le son du graffiti"
 		"pt"		"Reproduzir som de spray"
 		"cze"		"Přehrávat zvuk spreje"
 		"tr"		"Sprey sesi"
@@ -87,6 +96,7 @@
 	{
 		"#format"	"{1:s}"
 		"en"		"Current spray\n└ {1}"
+		"fr"		"Graffiti sélectionné\n└ {1}"
 		"pt"		"Spray atual\n└ {1}"
 		"cze"		"Aktuální sprej\n└ {1}"
 		"tr"		"Mevcut spreyiniz\n└ {1}"
@@ -96,6 +106,7 @@
 	"How to bind spray"
 	{
 		"en"		"How to bind spray\n└ bind KEY +spray"
+		"fr"		"Comment bind la touche du graffiti\n└ bind KEY +spray"
 		"pt"		"Como bindar spray\n└ bind KEY +spray"
 		"cze"		"Jak nabindovat sprej\n└ bind KLÁVESA +spray"
 		"tr"		"Nasıl spray yapabilirim?\n└ bind 'TUŞ' +spray"
@@ -106,6 +117,7 @@
 	{
 		"#format"	"{1:t}"
 		"en"		"You've succesfully {green}{1}{default} use spray with E key."
+		"fr"		"Vous avez {green}{1}{default} avec votre touche <E>"
 		"pt"		"Você {green}{1}{default} uso de spray com a tecla E."
 		"cze"		"Úspěšně sis {green}{1}{default} použití spreje klávesou E."
 		"tr"		"{orange}E{default} sprey tuşunuz {green}{1}{default} olarak değiştirildi."
@@ -116,6 +128,7 @@
 	{
 		"#format"	"{1:t}"
 		"en"		"You've successfully {green}{1}{default} play spray sound."
+		"fr"		"Vous avez {green}{1}{default} le son du graffiti"
 		"pt"		"Você {green}{1}{default} som do spray."
 		"cze"		"Úspěšně sis {green}{1}{default} přehrání zvuku spreje."
 		"tr"		"Sprey sesiniz {green}{1}{default} olarak değiştirildi."
@@ -125,6 +138,7 @@
 	"Enabled"
 	{
 		"en"		"enabled"
+		"fr"		"Activé"
 		"pt"		"habilitou"
 		"cze"		"zapnul"
 		"tr"		"Açık"
@@ -134,6 +148,7 @@
 	"Disabled"
 	{
 		"en"		"disabled"
+		"fr"		"Désactivé"
 		"pt"		"desabilitou"
 		"cze"		"vypnul"
 		"tr"		"Kapalı"
@@ -143,6 +158,7 @@
 	"Sprays disabled"
 	{
 		"en"		"You've successfully disabled sprays."
+		"fr"		"Vous avez désactiver les graffitis."
 		"pt"		"Você desabilitou os sprays com sucesso."
 		"cze"		"Úspěšně sis vypnul spreje."
 		"tr"		"Sprey sistemini devre dışı bıraktınız."
@@ -153,6 +169,7 @@
 	{
 		"#format"	"{1:s}"
 		"en"		"You've successfully set {green}{1}{default} spray."
+		"fr"		"Vous avez sélectionné {green}{1}{default} en graffiti."
 		"pt"		"Você configurou o spray {green}{1}{default} com sucesso."
 		"cze"		"Úspěšně sis nastavil {green}{1}{default} sprej."
 		"tr"		"Spreyiniz {green}{1}{default} olarak değiştirildi."
@@ -162,6 +179,7 @@
 	"Max Sprays Created"
 	{
 		"en"		"This round has reached maximum amount of sprays."
+		"fr"		"Vous avez atteint la limite de graffiti dans le round"
 		"pt"		"Este round atingiu a quantidade máxima de sprays."
 		"cze"		"Tohle kolo bylo použito už moc sprejů."
 		"tr"		"Bu turda çok fazla sprey kullanıldı."
@@ -171,12 +189,14 @@
 	{
 		"#format"	"{1:t}"
 		"en"		"You've successfully {green}{1}{default} random sprays."
+		"fr"		"Vous avez appliqué {green}{1}{default} en graffiti aléatoire."
 		"pt"		"Você {green}{1} sprays aleatórios{default} com sucesso."
 		"cze"		"Úspěšně sis {green}{1}{default} náhodný spreje."
 	}
 	"Random spray"
 	{
 		"en"		"Random sprays"
+		"fr"		"Graffiti aléatoire"
 		"pt"		"Sprays aleatórios"
 		"cze"		"Náhodný spreje"
 	}
